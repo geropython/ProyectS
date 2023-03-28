@@ -12632,7 +12632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputController: {fileID: 1386461468}
-  characterModel: {fileID: 1211851635}
+  playerModel: {fileID: 1211851635}
 --- !u!1 &1386461467
 GameObject:
   m_ObjectHideFlags: 0
