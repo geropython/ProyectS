@@ -6,7 +6,7 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField] private Transform character;
 
-    [Range(0f, 1f)] [SerializeField] private float followSpeed;
+    [Range(0f, 10f)] [SerializeField] private float followSpeed;
     
     void Start()
     {

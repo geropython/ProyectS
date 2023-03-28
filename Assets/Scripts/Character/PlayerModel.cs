@@ -1,16 +1,24 @@
+using System;
 using UnityEngine;
 
-namespace Character
+public class PlayerModel : MonoBehaviour
 {
-    public class PlayerModel : MonoBehaviour
-    {
+    public Action<Vector2> OnMove = delegate(Vector2 vector2) {  };
+    
+    [Range(0, 10)] [SerializeField] private float speed;
 
-        [Range(0, 10)] [SerializeField] private float speed;
-    
-        public void Move(Vector2 direction)
-        {
-            transform.Translate(direction * (speed * Time.deltaTime));
-        }
-    
+    private Vector2 _direction;
+    public Vector2 Direction => _direction;
+
+    private void Update()
+    {
+        transform.Translate(_direction);
+        _direction = Vector2.zero;
     }
+
+    public void Move(Vector2 direction)
+    {
+        _direction = direction * (speed * Time.deltaTime);
+    }
+
 }
