@@ -603,6 +603,18 @@ PrefabInstance:
       propertyPath: character
       value: 
       objectReference: {fileID: 2135211826}
+    - target: {fileID: 7991128664340548560, guid: a189c33cff76ad64ca14d6ec2693330f, type: 3}
+      propertyPath: _inputController
+      value: 
+      objectReference: {fileID: 1335314818}
+    - target: {fileID: 7991128664340548560, guid: a189c33cff76ad64ca14d6ec2693330f, type: 3}
+      propertyPath: maxMouseDistanceFromPlayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7991128664340548560, guid: a189c33cff76ad64ca14d6ec2693330f, type: 3}
+      propertyPath: minMouseDistanceFromPlayer
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7991128664340548564, guid: a189c33cff76ad64ca14d6ec2693330f, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -880,6 +892,10 @@ PrefabInstance:
       propertyPath: inputController
       value: 
       objectReference: {fileID: 1335314818}
+    - target: {fileID: 3948495223841210803, guid: b2150c860b34a584599967f9ad26314b, type: 3}
+      propertyPath: speed
+      value: 4.84
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2150c860b34a584599967f9ad26314b, type: 3}
 --- !u!4 &2135211826 stripped

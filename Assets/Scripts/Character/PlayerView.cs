@@ -30,9 +30,7 @@ public class PlayerView : MonoBehaviour
         
         var x = idle ? lookAt.x : playerModel.Direction.x;
         var y = idle ? lookAt.y : playerModel.Direction.y;
-        
-        Debug.Log($"Animator x:{x} y:{y} ");
-        
+
         animator.SetFloat(XDirection, x);
         animator.SetFloat(YDirection, y);
         
