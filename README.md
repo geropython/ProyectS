@@ -30,13 +30,13 @@
 <br />
 <div align="center">
   <a href="https://github.com/geropython/ProyectS">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="Wiki/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">Project S</h3>
 
   <p align="center">
-    project_description
+    Project S is a Survival,Exploration,Crafting game where the main character is stranded and their main objective is escape; To do this they have to find parts scattered around the place and repair the escape vehicle. All of this has to be done while dodging or exterminating the different enemies that stand in your path to freedom.
     <br />
     <a href="https://github.com/geropython/ProyectS"><strong>Explore the docs »</strong></a>
     <br />
@@ -185,6 +185,6 @@ Project Link: [https://github.com/geropython/ProyectS](https://github.com/geropy
 [license-url]: https://github.com/geropython/ProyectS/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: Wiki/screenshot.png
 [Unity.com]: https://img.shields.io/badge/unity-000000?style=for-the-badge&logo=unity&logoColor=white
 [Unity-url]: htpps://unity.com
