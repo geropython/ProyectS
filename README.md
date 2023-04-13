@@ -154,7 +154,6 @@ Project Link: [https://github.com/geropython/ProyectS](https://github.com/geropy
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/geropython/ProyectS.svg?style=for-the-badge
 [contributors-url]: https://github.com/geropython/ProyectS/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/geropython/ProyectS.svg?style=for-the-badge
