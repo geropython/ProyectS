@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemDatabase : MonoBehaviour
@@ -11,31 +12,12 @@ public class ItemDatabase : MonoBehaviour
     {
         return items.Find(item => item.id == id);
     }
-    public Item GetItem(string name)
+    public Item GetItem(string identifier)
     {
-        return items.Find(item => item.name == name);
+        return items.Find(item => item.identifier == identifier);
     }
     private void BuildItemDatabase()
     {
-        items = new List<Item>()
-        {
-            new Item(1, "Stone", "A chunk of stone.", 
-            new Dictionary<string, int> 
-            {
-                { "Power", 1 },
-                { "Defence", 1 }
-            }),
-            new Item(2, "Wood", "This was once a tree.",
-            new Dictionary<string, int> 
-            {
-                { "Value", 1 }
-            }),
-            new Item(3, "Rusty Pipe", "A pipe that has seen better days.",
-            new Dictionary<string, int> 
-            {
-                { "Power", 3 },
-                { "Defence", 2 }
-            })
-        };
+        items = new List<Item>(){};
     }
 }
