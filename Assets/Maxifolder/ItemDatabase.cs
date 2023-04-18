@@ -10,11 +10,13 @@ public class ItemDatabase : MonoBehaviour
         BuildItemDatabase();
     }
 
+    // Busca item por su id propio
     public Item GetItem(int id)
     {
         return _itemsDatabase.Find(item => item.Id == id);
     }
 
+    // Busca item por su nombre propio (tiene que estar escrito exacto)
     public Item GetItem(string identifier)
     {
         return _itemsDatabase.Find(item => item.Identifier == identifier);

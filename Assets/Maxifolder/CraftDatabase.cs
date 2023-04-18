@@ -10,6 +10,7 @@ public class CraftDatabase : MonoBehaviour
         BuildRecipeDatabase();
     }
 
+    // Buscar receta por el id del item que resulta
     public CraftRecipe GetRecipe(int id)
     {
         return _recipesDatabase.Find(recipe => recipe.ItemResultId == id);

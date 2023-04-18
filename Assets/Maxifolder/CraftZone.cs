@@ -60,6 +60,7 @@ public class CraftZone : MonoBehaviour
         }
         else
         {
+            // Avisar que el craft fallo
             Debug.LogWarning("Mensaje en pantalla que no tiene items requeridos para el craft");
         }
     }

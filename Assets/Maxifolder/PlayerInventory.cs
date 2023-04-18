@@ -33,7 +33,7 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-    // Pide un item y devuelve la cantidad que hay en inventario
+    // Pide un item y devuelve la cantidad que hay en inventario (para ui)
     public int CheckItem(int id)
     {
         var value = 0;

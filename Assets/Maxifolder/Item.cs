@@ -9,7 +9,7 @@ public class Item
     [SerializeField] private Sprite icon;
 
     [SerializeField] private readonly Dictionary<string, int> stats = new();
-    // public Enum Subcategory (Equipment,Crafting Material,Consumable) para poder filtrar 
+    // public Enum Subcategory (Equipment,Crafting Material,Consumable) para poder filtrar maybe
 
     public int Id => id;
     public string Identifier => identifier;
