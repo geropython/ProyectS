@@ -3,22 +3,30 @@ using UnityEngine;
 
 public class PlayerModel : MonoBehaviour
 {
-    public Action<Vector2> OnMove = delegate(Vector2 vector2) {  };
-    
     [Range(0, 10)] [SerializeField] private float speed;
+    public bool InventoryFull;
 
-    private Vector2 _direction;
-    public Vector2 Direction => _direction;
+    public Action<Vector2> OnMove = delegate { };
+    public Vector2 Direction { get; private set; }
 
     private void Update()
     {
-        transform.Translate(_direction);
-        _direction = Vector2.zero;
+        transform.Translate(Direction);
+        Direction = Vector2.zero;
     }
 
     public void Move(Vector2 direction)
     {
-        _direction = direction * (speed * Time.deltaTime);
+        Direction = direction * (speed * Time.deltaTime);
     }
 
+    public void PickupItem(int id, int quantity)
+    {
+        // usa el id para leer la database y asi agregar el item a su inventario
+        var item = GameManager.Instance.ItemDatabase.GetItem(id);
+        if (item != null)
+        {
+            GameManager.Instance.PlayerInventory.AddItem(id, quantity);
+        }
+    }
 }
