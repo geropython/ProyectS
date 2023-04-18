@@ -4,7 +4,9 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     private Dictionary<int, int> _playerInventory = new();
+    public Dictionary<int, int> PlayerInventoryDic => _playerInventory;
 
+    // Agrega cantidad especifica a un item en el inventario
     public void AddItem(int id, int addQuantity)
     {
         if (_playerInventory.TryGetValue(id, out var oldQuantity))
@@ -17,6 +19,7 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
+    // Saca cantidad especifica de un item del inventario
     public void RemoveItem(int id, int removeQuantity)
     {
         if (!_playerInventory.TryGetValue(id, out var oldQuantity)) return;
@@ -30,11 +33,19 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
+    // Pide un item y devuelve la cantidad que hay en inventario
     public int CheckItem(int id)
     {
         var value = 0;
         _playerInventory.TryGetValue(id, out value);
-        Debug.LogWarning($"Amount:{value}");
         return value;
+    }
+
+    // Confirma que hay cierta cantidad de item en el inventario (para craft)
+    public bool CheckItem(int id, int quantity)
+    {
+        var value = 0;
+        _playerInventory.TryGetValue(id, out value);
+        return value >= quantity;
     }
 }

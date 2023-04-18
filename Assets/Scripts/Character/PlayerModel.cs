@@ -27,7 +27,6 @@ public class PlayerModel : MonoBehaviour
         if (item != null)
         {
             GameManager.Instance.PlayerInventory.AddItem(id, quantity);
-            Debug.LogWarning(item.Identifier);
         }
         // fijarse donde poner el inventario (si en playercontroller o en otro script separado)
     }

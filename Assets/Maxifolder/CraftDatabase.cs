@@ -19,7 +19,7 @@ public class CraftDatabase : MonoBehaviour
     {
         _recipesDatabase = new List<CraftRecipe>()
         {
-            new(3, new[] { 1, 1, 1, 2, 2 }),
+            new(3, 1, new[] { 1, 1, 1, 2, 2 }),
         };
     }
 }
