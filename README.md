@@ -166,6 +166,6 @@ Project Link: [https://github.com/geropython/ProyectS](https://github.com/geropy
 [license-url]: https://github.com/geropython/ProyectS/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
-[product-screenshot]: Wiki/screenshot.png
+[product-screenshot]: Wiki/title.png
 [Unity.com]: https://img.shields.io/badge/unity-000000?style=for-the-badge&logo=unity&logoColor=white
 [Unity-url]: https://unity.com
