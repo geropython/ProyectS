@@ -13,4 +13,9 @@ public class CraftRecipeSO : ScriptableObject
     private List<ItemSO> itemsRequired;
 
     [SerializeField] private int[] itemsRequiredQuantity;
+
+    public ItemSO ItemResult => itemResult;
+    public int ItemResultQuantity => itemResultQuantity;
+    public List<ItemSO> ItemsRequired => itemsRequired;
+    public int[] ItemsRequiredQuantity => itemsRequiredQuantity;
 }
