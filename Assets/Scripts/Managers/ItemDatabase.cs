@@ -1,6 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ItemCategories
+{
+    Equipment = 0,
+    Consumable = 1,
+    Material = 2,
+}
+
 public class ItemDatabase : MonoBehaviour
 {
     private List<Item> _itemsDatabase = new();
