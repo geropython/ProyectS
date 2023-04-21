@@ -3,49 +3,47 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    private Dictionary<int, int> _playerInventory = new();
-    public Dictionary<int, int> PlayerInventoryDic => _playerInventory;
+    private Dictionary<ItemSO, int> _playerInventorySO = new();
+    public Dictionary<ItemSO, int> PlayerInventoryDicSO => _playerInventorySO;
 
-    // Agrega cantidad especifica a un item en el inventario
-    public void AddItem(int id, int addQuantity)
+    // Agrega el item al inventario, si ya estaba le suma la cantidad extra, sino crea una nueva entrada y le asigna ese valor
+    public void AddItemSO(ItemSO item, int addQuantity)
     {
-        if (_playerInventory.TryGetValue(id, out var oldQuantity))
+        if (_playerInventorySO.TryGetValue(item, out var oldQuantity))
         {
-            _playerInventory[id] = oldQuantity + addQuantity;
+            _playerInventorySO[item] = oldQuantity + addQuantity;
         }
         else
         {
-            _playerInventory.Add(id, addQuantity);
+            _playerInventorySO.Add(item, addQuantity);
         }
     }
 
-    // Saca cantidad especifica de un item del inventario
-    public void RemoveItem(int id, int removeQuantity)
+    // Lo mismo que agregar pero al reves
+    public void RemoveItemSO(ItemSO item, int removeQuantity)
     {
-        if (!_playerInventory.TryGetValue(id, out var oldQuantity)) return;
+        if (!_playerInventorySO.TryGetValue(item, out var oldQuantity)) return;
         if (oldQuantity <= removeQuantity)
         {
-            _playerInventory[id] = 0;
+            _playerInventorySO[item] = 0;
         }
         else
         {
-            _playerInventory[id] = oldQuantity - removeQuantity;
+            _playerInventorySO[item] = oldQuantity - removeQuantity;
         }
     }
 
-    // Pide un item y devuelve la cantidad que hay en inventario (para ui)
-    public int CheckItem(int id)
+    // Devuelve la cantidad que hay del item pedido
+    public int CheckItemSO(ItemSO item)
     {
-        var value = 0;
-        _playerInventory.TryGetValue(id, out value);
-        return value;
+        _playerInventorySO.TryGetValue(item, out var itemQuantity);
+        return itemQuantity;
     }
 
-    // Confirma que hay cierta cantidad de item en el inventario (para craft)
-    public bool CheckItem(int id, int quantity)
+    // Comprueba si el item pedido tiene la cantidad adecuada
+    public bool CheckItemSO(ItemSO item, int requiredQuantity)
     {
-        var value = 0;
-        _playerInventory.TryGetValue(id, out value);
-        return value >= quantity;
+        _playerInventorySO.TryGetValue(item, out var itemQuantity);
+        return itemQuantity >= requiredQuantity;
     }
 }
