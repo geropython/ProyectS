@@ -4,7 +4,7 @@ using UnityEngine;
 public class CraftDatabase : MonoBehaviour
 {
     private List<CraftRecipe> _recipesDatabase = new();
-    private List<CraftRecipeSO> _recipesSODatabase = new();
+    [SerializeField] private List<CraftRecipeSO> _recipesSODatabase = new();
 
     private void Awake()
     {

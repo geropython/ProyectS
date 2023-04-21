@@ -14,6 +14,7 @@ public class CraftZone : MonoBehaviour
         if (playerModel)
         {
             Craft();
+            CraftSO();
         }
     }
 
