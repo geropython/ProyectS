@@ -6,6 +6,9 @@ public class PlayerInventory : MonoBehaviour
     private Dictionary<int, int> _playerInventory = new();
     public Dictionary<int, int> PlayerInventoryDic => _playerInventory;
 
+    private Dictionary<ItemSO, int> _playerInventorySO = new();
+    public Dictionary<ItemSO, int> PlayerInventoryDicSO => _playerInventorySO;
+
     // Agrega cantidad especifica a un item en el inventario
     public void AddItem(int id, int addQuantity)
     {
@@ -46,6 +49,45 @@ public class PlayerInventory : MonoBehaviour
     {
         var value = 0;
         _playerInventory.TryGetValue(id, out value);
+        return value >= quantity;
+    }
+
+    public void AddItemSO(ItemSO item, int addQuantity)
+    {
+        if (_playerInventorySO.TryGetValue(item, out var oldQuantity))
+        {
+            _playerInventorySO[item] = oldQuantity + addQuantity;
+        }
+        else
+        {
+            _playerInventorySO.Add(item, addQuantity);
+        }
+    }
+
+    public void RemoveItemSO(ItemSO item, int removeQuantity)
+    {
+        if (!_playerInventorySO.TryGetValue(item, out var oldQuantity)) return;
+        if (oldQuantity <= removeQuantity)
+        {
+            _playerInventorySO[item] = 0;
+        }
+        else
+        {
+            _playerInventorySO[item] = oldQuantity - removeQuantity;
+        }
+    }
+
+    public int CheckItemSO(ItemSO item)
+    {
+        var value = 0;
+        _playerInventorySO.TryGetValue(item, out value);
+        return value;
+    }
+
+    public bool CheckItemSO(ItemSO item, int quantity)
+    {
+        var value = 0;
+        _playerInventorySO.TryGetValue(item, out value);
         return value >= quantity;
     }
 }

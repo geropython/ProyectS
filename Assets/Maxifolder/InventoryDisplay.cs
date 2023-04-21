@@ -8,9 +8,9 @@ public class InventoryDisplay : MonoBehaviour
     {
         if (other.GetComponent<PlayerModel>())
         {
-            foreach (var KvP in GameManager.Instance.PlayerInventory.PlayerInventoryDic)
+            foreach (var KvP in GameManager.Instance.PlayerInventory.PlayerInventoryDicSO)
             {
-                Debug.LogWarning($"Item id:{KvP.Key}/Item amount:{KvP.Value}");
+                Debug.LogWarning($"Item id:{KvP.Key.Identifier}/Item amount:{KvP.Value}");
             }
         }
     }

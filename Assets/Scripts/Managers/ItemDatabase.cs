@@ -11,6 +11,7 @@ public enum ItemCategories
 public class ItemDatabase : MonoBehaviour
 {
     private List<Item> _itemsDatabase = new();
+    [SerializeField] private List<ItemSO> _itemsSODatabase = new();
 
     private void Awake()
     {
@@ -38,5 +39,15 @@ public class ItemDatabase : MonoBehaviour
             new(2, "Wooden Stick", "A stick made of wood"),
             new(3, "Rock Axe", "An Axe made of rock with a wooden handle"),
         };
+    }
+
+    public ItemSO GetItemSO(int id)
+    {
+        return _itemsSODatabase.Find(item => item.Id == id);
+    }
+
+    public ItemSO GetItemSO(string identifier)
+    {
+        return _itemsSODatabase.Find(item => item.Identifier == identifier);
     }
 }
