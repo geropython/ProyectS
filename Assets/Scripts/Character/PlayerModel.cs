@@ -29,4 +29,14 @@ public class PlayerModel : MonoBehaviour
             GameManager.Instance.PlayerInventory.AddItem(id, quantity);
         }
     }
+
+    public void PickupItemSO(ItemSO itemSO, int quantity)
+    {
+        // usa el id para leer la database y asi agregar el item a su inventario
+        ItemSO item = GameManager.Instance.ItemDatabase.GetItemSO(itemSO);
+        if (item != null)
+        {
+            GameManager.Instance.PlayerInventory.AddItemSO(item, quantity);
+        }
+    }
 }

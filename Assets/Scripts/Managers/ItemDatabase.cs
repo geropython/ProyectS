@@ -41,9 +41,9 @@ public class ItemDatabase : MonoBehaviour
         };
     }
 
-    public ItemSO GetItemSO(int id)
+    public ItemSO GetItemSO(ItemSO itemSO)
     {
-        return _itemsSODatabase.Find(item => item.Id == id);
+        return _itemsSODatabase.Find(item => item == itemSO);
     }
 
     public ItemSO GetItemSO(string identifier)
