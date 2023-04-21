@@ -20,16 +20,6 @@ public class PlayerModel : MonoBehaviour
         Direction = direction * (speed * Time.deltaTime);
     }
 
-    public void PickupItem(int id, int quantity)
-    {
-        // usa el id para leer la database y asi agregar el item a su inventario
-        var item = GameManager.Instance.ItemDatabase.GetItem(id);
-        if (item != null)
-        {
-            GameManager.Instance.PlayerInventory.AddItem(id, quantity);
-        }
-    }
-
     public void PickupItemSO(ItemSO itemSO, int quantity)
     {
         // usa el id para leer la database y asi agregar el item a su inventario

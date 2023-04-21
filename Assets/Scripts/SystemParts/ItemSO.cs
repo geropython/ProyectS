@@ -7,7 +7,7 @@ public class ItemSO : ScriptableObject
     [SerializeField] private string identifier;
     [SerializeField] private string description;
     [SerializeField] private Sprite icon;
-    [SerializeField] private ItemCategories itemCategories;
+    [SerializeField] private ItemCategories itemCategories = ItemCategories.Material;
     [SerializeField] private StatsSO stats;
 
     public int Id => id;
