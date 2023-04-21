@@ -92,7 +92,7 @@ public class CraftZone : MonoBehaviour
         {
             if (!GameManager.Instance.PlayerInventory.CheckItemSO(itemRequiredKVP.Key, itemRequiredKVP.Value))
             {
-                return;
+                break;
             }
 
             gotItems = true;
