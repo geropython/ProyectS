@@ -30,12 +30,11 @@ public class CameraController : MonoBehaviour
     {
         Vector2 startPosition = transform.position;
 
-        var distanceFromPlayer =
-            Vector2.Distance(_inputController.MousePosition, character.transform.position);
+        var distanceFromPlayer = Vector2.Distance(_inputController.MousePosition, character.transform.position);
 
         var mouseDirection = (_inputController.MousePosition - (Vector2)character.transform.position).normalized;
 
-        Debug.Log(mouseDirection);
+        //Debug.Log(mouseDirection);
         Vector2 followPosition = new Vector2();
 
         if (distanceFromPlayer <= minMouseDistanceFromPlayer) //Snap directly to player

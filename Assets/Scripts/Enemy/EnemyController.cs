@@ -8,14 +8,15 @@ using Character;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] private int damage = 15;
-    public PlayerController _controller;
+    [SerializeField] private int damage;
+    public Health _healthcontroller;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            _controller.TakeDamage(damage);
+            _healthcontroller.TakeDamage(damage);
         }
     }
+
 }
