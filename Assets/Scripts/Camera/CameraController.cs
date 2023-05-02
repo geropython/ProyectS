@@ -10,12 +10,14 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField] private Transform character;
     [SerializeField] private InputController _inputController;
+    //[SerializeField] private Rigidbody2D _rb;
+    [SerializeField] private GameObject _midPointObject;
     
     [Range(0f, 10f)] [SerializeField] private float followSpeed;
     [Range(0f, 10f)] [SerializeField] private float maxMouseDistanceFromPlayer;
     [Range(0f, 10f)] [SerializeField] private float minMouseDistanceFromPlayer;
     
-    private Vector2 _midPoint;
+    private Vector3 _midPoint;
     
     void Start()
     {
@@ -52,14 +54,19 @@ public class CameraController : MonoBehaviour
 
         // Debug.Log($"distance between player and mouse:{distanceFromPlayer}");
         
-        _midPoint = (followPosition + (Vector2)character.transform.position) / 2f;
-
+        _midPoint =(Vector3) (followPosition + (Vector2)character.transform.position) / 2f;
+        _midPoint.z = -10;
+        _midPointObject.transform.position = _midPoint;  // new
+        
         var newPosition = (Vector3)Vector2.Lerp(startPosition,  _midPoint,
             followSpeed * Time.deltaTime);
 
+       // _rb.velocity = (newPosition - transform.position).normalized * (followSpeed * 1000) ; // new 
+
         newPosition.z = -10;
 
-        transform.position = newPosition;
+        //transform.position = newPosition;
+        
     }
 
     private void OnDrawGizmos()
