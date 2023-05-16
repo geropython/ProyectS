@@ -1,27 +1,26 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CraftZone : MonoBehaviour
 {
-    [SerializeField] private int itemToCraftId;
+    [SerializeField] private ItemSO itemToCraftSO;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         var playerModel = other.GetComponent<PlayerModel>();
         if (playerModel)
         {
-            Craft();
+            CraftSO();
         }
     }
 
-    private void Craft()
+    private void CraftSO()
     {
         // Buscar que receta tiene ese item (se busca con el ID)
-        var recipe = GameManager.Instance.CraftDatabase.GetRecipe(itemToCraftId);
+        var recipe = GameManager.Instance.CraftDatabase.GetRecipeSO(itemToCraftSO);
         // Guardar los items que son necesarios para la receta(estan en la receta)
-        Dictionary<int, int> requiredItemsAmount = new();
-        foreach (var required in recipe.RequiredItems)
+        Dictionary<ItemSO, int> requiredItemsAmount = new();
+        foreach (var required in recipe.ItemsRequired)
         {
             if (requiredItemsAmount.ContainsKey(required))
             {
@@ -37,10 +36,9 @@ public class CraftZone : MonoBehaviour
         var gotItems = false;
         foreach (var itemRequiredKVP in requiredItemsAmount)
         {
-            if (!GameManager.Instance.PlayerInventory.CheckItem(itemRequiredKVP.Key, itemRequiredKVP.Value))
+            if (!GameManager.Instance.PlayerInventory.CheckItemSO(itemRequiredKVP.Key, itemRequiredKVP.Value))
             {
-                gotItems = false;
-                return;
+                break;
             }
 
             gotItems = true;
@@ -51,11 +49,11 @@ public class CraftZone : MonoBehaviour
         {
             foreach (var itemRequiredKVP in requiredItemsAmount)
             {
-                GameManager.Instance.PlayerInventory.RemoveItem(itemRequiredKVP.Key, itemRequiredKVP.Value);
+                GameManager.Instance.PlayerInventory.RemoveItemSO(itemRequiredKVP.Key, itemRequiredKVP.Value);
             }
 
             // Otorgarle el item deseado
-            GameManager.Instance.PlayerInventory.AddItem(itemToCraftId, recipe.ItemResultQuantity);
+            GameManager.Instance.PlayerInventory.AddItemSO(itemToCraftSO, recipe.ItemResultQuantity);
             Debug.LogWarning("Crafteo satisfactorio");
         }
         else
