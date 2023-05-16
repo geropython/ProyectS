@@ -7,6 +7,7 @@ public class InventoryDisplay : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.GetComponent<PlayerModel>()) return;
+        _inventoryDisplayText = "";
         foreach (var kvP in GameManager.Instance.PlayerInventory.PlayerInventoryDicSO)
         {
             _inventoryDisplayText += $"{kvP.Key.Identifier} x{kvP.Value} \n";
