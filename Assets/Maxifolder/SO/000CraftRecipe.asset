@@ -10,11 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ac5437c0d15ce04192da79dc1fd85a8, type: 3}
-  m_Name: CraftStoneAxe
+  m_Name: 000CraftRecipe
   m_EditorClassIdentifier: 
-  itemResult: {fileID: 11400000, guid: 89bb19b6ce937f94a986ee5fe014d5ff, type: 2}
+  itemResult: {fileID: 11400000, guid: dc0c554761c9b204d9849f550e9204b7, type: 2}
   itemResultQuantity: 1
-  itemsRequired:
-  - {fileID: 11400000, guid: c154b84efa321ec4c89b7a3db6799a72, type: 2}
-  - {fileID: 11400000, guid: 80f64157d47edc34daaf04e14a48dc4b, type: 2}
-  itemsRequiredQuantity: 0200000003000000
+  itemsRequired: []
+  itemsRequiredQuantity: 

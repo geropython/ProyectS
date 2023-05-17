@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8e9cdff2cfc205429ba2b718380db54, type: 3}
-  m_Name: 004StoneAxe
+  m_Script: {fileID: 11500000, guid: 058360f2a61232c4f9f3b925e4d8ced8, type: 3}
+  m_Name: 007ItemEquipment 2
   m_EditorClassIdentifier: 
-  id: 4
-  identifier: Stone Axe
-  description: An Axe with a stone head
+  id: 7
+  identifier: Item Equipment 2
+  description: Descripcion Descriptiva
   icon: {fileID: 0}
   itemCategories: 0
   stats: {fileID: 0}
