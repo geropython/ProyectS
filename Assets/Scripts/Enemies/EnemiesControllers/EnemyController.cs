@@ -12,13 +12,14 @@ public class EnemyController : MonoBehaviour
    {
       if (lineOfSight.CanSeePlayer())
       {
-         print("Chasing Player");
+         
          MoveTowardsPlayer(lineOfSight.player.position);
       }
    }
 
    private void MoveTowardsPlayer(Vector2 targetPosition)
    {
+       print("Chasing Player");
       Vector2 direction = targetPosition - (Vector2)transform.position;
       transform.Translate(direction.normalized * (moveSpeed * Time.deltaTime));
    }

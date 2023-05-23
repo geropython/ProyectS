@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
 using Unity.VisualScripting;
@@ -12,7 +12,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] private InputController _inputController;
     //[SerializeField] private Rigidbody2D _rb;
     [SerializeField] private GameObject _midPointObject;
-    
+    // algo
     [Range(0f, 10f)] [SerializeField] private float followSpeed;
     [Range(0f, 10f)] [SerializeField] private float maxMouseDistanceFromPlayer;
     [Range(0f, 10f)] [SerializeField] private float minMouseDistanceFromPlayer;

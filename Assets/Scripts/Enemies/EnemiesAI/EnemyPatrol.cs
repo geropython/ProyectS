@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,10 +24,10 @@ public class EnemyPatrol : MonoBehaviour
      {
           if (_currentWaypoint != null)
           {
-               MoveToWaypoint();
+               MoveToWaypoint();  
           }
      }
-
+     //Movimiento del Enemigo  al siguiente waypoint.           
      private void MoveToWaypoint()
      {
           Vector2 direction = _currentWaypoint.position - transform.position;
