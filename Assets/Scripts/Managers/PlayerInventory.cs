@@ -1,10 +1,18 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    private Dictionary<ItemSO, int> _playerInventorySO = new();
+    [SerializeField] private Pickup pickupPrefab;
+
+    private Dictionary<ItemSO, int> _playerInventorySO;
     public Dictionary<ItemSO, int> PlayerInventoryDicSO => _playerInventorySO;
+
+    private void Awake()
+    {
+        _playerInventorySO = new();
+    }
 
     // Agrega el item al inventario, si ya estaba le suma la cantidad extra, sino crea una nueva entrada y le asigna ese valor
     public void AddItemSO(ItemSO item, int addQuantity)
@@ -45,5 +53,10 @@ public class PlayerInventory : MonoBehaviour
     {
         _playerInventorySO.TryGetValue(item, out var itemQuantity);
         return itemQuantity >= requiredQuantity;
+    }
+
+    public void DropItemSO()
+    {
+        
     }
 }

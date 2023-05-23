@@ -70914,7 +70914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6285e01353673ca4fa406d4ef0b6b8a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultInventory: 0
+  defaultInventory: 1
   materialInventory: 0
   consumableInventory: 0
   equipmentInventory: 0
