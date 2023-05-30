@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1690520164}
   - component: {fileID: 1690520168}
   - component: {fileID: 1690520169}
+  - component: {fileID: -1472223088047789425}
   m_Layer: 0
   m_Name: EnemyMutant
   m_TagString: Untagged
@@ -205,3 +206,17 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   moveSpeed: 2
+--- !u!114 &-1472223088047789425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5590099326329587924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb354b00e24bf4845b559bcbffd58788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 200
+  currentHealth: 0
