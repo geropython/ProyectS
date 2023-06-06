@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b90bcdda019e6b479d607010fb05ee3, type: 3}
+  m_Name: TestLootTable
+  m_EditorClassIdentifier: 
+  itemToDropList:
+  - {fileID: 11400000, guid: 958a675726e82a442a825b3aae76e68d, type: 2}
+  - {fileID: 11400000, guid: 13a44267d3ca8d24e92a2c581d87dc46, type: 2}
+  - {fileID: 11400000, guid: dc0c554761c9b204d9849f550e9204b7, type: 2}
+  - {fileID: 11400000, guid: 0d4674a0571b880438b2258f7480226a, type: 2}
+  - {fileID: 11400000, guid: a8a49d1fc727c294185483e3529f21a5, type: 2}
+  - {fileID: 11400000, guid: 423d4316bac474d4ba9c5abbc5ad1a1e, type: 2}
+  - {fileID: 11400000, guid: ce677764cb551b14aa3027ee861aaad6, type: 2}
+  - {fileID: 11400000, guid: 6e713c460b71ca246b232992f56cf0fc, type: 2}
+  - {fileID: 11400000, guid: 7b38eb5924a2f2747bd5d83f8ab4d19d, type: 2}
+  itemDropChanceList: 010000000100000001000000010000000100000001000000010000000100000001000000

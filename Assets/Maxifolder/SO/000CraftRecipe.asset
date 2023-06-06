@@ -9,12 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8e9cdff2cfc205429ba2b718380db54, type: 3}
-  m_Name: 002Stone
+  m_Script: {fileID: 11500000, guid: 9ac5437c0d15ce04192da79dc1fd85a8, type: 3}
+  m_Name: 000CraftRecipe
   m_EditorClassIdentifier: 
-  id: 2
-  identifier: Stone
-  description: A chunk of Stone
-  icon: {fileID: 0}
-  itemCategories: 2
-  stats: {fileID: 0}
+  itemResult: {fileID: 11400000, guid: dc0c554761c9b204d9849f550e9204b7, type: 2}
+  itemResultQuantity: 1
+  itemsRequired: []
+  itemsRequiredQuantity: 

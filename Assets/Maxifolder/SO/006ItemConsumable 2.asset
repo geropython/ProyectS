@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8e9cdff2cfc205429ba2b718380db54, type: 3}
-  m_Name: 003Iron
+  m_Script: {fileID: 11500000, guid: be9b2f51d70c0734bb140b441126aac4, type: 3}
+  m_Name: 006ItemConsumable 2
   m_EditorClassIdentifier: 
-  id: 3
-  identifier: Iron
-  description: An Ingot of Iron
-  icon: {fileID: 0}
-  itemCategories: 2
+  id: 6
+  identifier: Item Consumable 2
+  description: Descripcion Descriptiva
+  icon: {fileID: 21300000, guid: baa6146c9a91c684e9162b3bc6245b69, type: 3}
+  itemCategories: 1
   stats: {fileID: 0}

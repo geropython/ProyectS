@@ -1,14 +1,14 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "new Item", menuName = "Scriptables/Item", order = 0)]
-public class ItemSO : ScriptableObject
+public abstract class ItemSO : ScriptableObject
 {
-    [SerializeField] private int id;
-    [SerializeField] private string identifier;
-    [SerializeField] private string description;
-    [SerializeField] private Sprite icon;
-    [SerializeField] private ItemCategories itemCategories = ItemCategories.Material;
-    [SerializeField] private StatsSO stats;
+    [SerializeField] protected int id;
+    [SerializeField] protected string identifier;
+    [SerializeField] protected string description;
+    [SerializeField] protected Sprite icon;
+    [SerializeField] protected ItemCategories itemCategories;
+    [SerializeField] protected StatsSO stats;
 
     public int Id => id;
     public string Identifier => identifier;
