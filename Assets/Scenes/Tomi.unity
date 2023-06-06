@@ -70672,6 +70672,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1971835984}
+    - target: {fileID: 1690520164, guid: 1d27bc5085972954aa7b1e65997c0cae, type: 3}
+      propertyPath: maxDistance
+      value: 6.52
+      objectReference: {fileID: 0}
     - target: {fileID: 1690520169, guid: 1d27bc5085972954aa7b1e65997c0cae, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
