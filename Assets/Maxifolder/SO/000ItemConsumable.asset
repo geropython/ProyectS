@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 0
   identifier: Item Consumable
   description: Descripcion Descriptiva
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: baa6146c9a91c684e9162b3bc6245b69, type: 3}
   itemCategories: 1
   stats: {fileID: 0}
