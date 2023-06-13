@@ -4,15 +4,7 @@ using UnityEngine;
 
 public class City : MapNode
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public List<Block> Blocks { get; private set; }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public int AmountOfKeyBuildings { get; set; }
 }

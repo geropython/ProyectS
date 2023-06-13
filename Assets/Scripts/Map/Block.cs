@@ -27,16 +27,16 @@ public class Block : MapNode
     /// <returns>True si agrego el edificio a la manzana. - False si no habia espacio para agregarlo.</returns>
     public bool AddBuilding(Building building)
     {
-        if (CheckForSpace(building))
+        if (CheckForSpace(building) >= 0)
             Children.Add(building);
         return true;
     }
 
     #region Metodos Privados
 
-    private bool CheckForSpace(Building building) => (AvaliableSpace > building.TotalTileSize) ? CheckIfFits(building) : false;
+    private int CheckForSpace(Building building) => (AvaliableSpace > building.TotalTileSize) ? CheckIfFits(building) : -1;
 
-    private bool CheckIfFits(Building building)
+    private int CheckIfFits(Building building)
     {
         switch (building.Settings.Door)
         {
@@ -52,35 +52,67 @@ public class Block : MapNode
         throw new ArgumentException();
     }
 
-    private bool CheckIfFitsTop(int size)
+    private int CheckIfFitsTop(int size)
     {
+        int row = 0;
+        //Si es un edificio de 1 tile de ancho devuelvo la primer posicion que tenga 0
+        if (size == 1)
+            for (int i = 0; i < _settings.Width; i++)
+                if (_blockMap[row, i] == 0) return i;
+
+        //Si el edificio es de mas de 1 tile de ancho recorro posiciones hasta encontrar 0 y a partir de ahi el ancho.
+        int aux = 0;
         for (int i = 0; i < _settings.Width; i++)
         {
-
+            if (_blockMap[row, i] == 0)
+            {
+                for (int j = 0; j < _settings.Width - i; j++)
+                    aux += _blockMap[row, j];
+                if (aux == 0)
+                    return i;        
+            }
         }
+        return -1;
     }
 
-    private bool CheckIfFitsBottom(int size)
+    private int CheckIfFitsBottom(int size)
     {
+        int row = _settings.Height -1;
+        //Si es un edificio de 1 tile de ancho devuelvo la primer posicion que tenga 0
+        if (size == 1)
+            for (int i = 0; i < _settings.Width; i++)
+                if (_blockMap[row, i] == 0) return i;
+
+        //Si el edificio es de mas de 1 tile de ancho recorro posiciones hasta encontrar 0 y a partir de ahi el ancho.
+        int aux = 0;
         for (int i = 0; i < _settings.Width; i++)
         {
-
+            if (_blockMap[row, i] == 0)
+            {
+                for (int j = 0; j < _settings.Width - i; j++)
+                    aux += _blockMap[row, j];
+                if (aux == 0)
+                    return i;
+            }
         }
+        return -1;
     }
 
-    private bool CheckIfFitsLeft(int size)
+    private int CheckIfFitsLeft(int size)
     {
         for (int i = 0; i < _settings.Height; i++)
         {
 
         }
+        throw new NotImplementedException();
     }
-    private bool CheckIfFitsRight(int size)
+    private int CheckIfFitsRight(int size)
     {
         for (int i = 0; i < _settings.Height; i++)
         {
 
         }
+        throw new NotImplementedException();
     }
     #endregion
 }
