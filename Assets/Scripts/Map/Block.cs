@@ -98,20 +98,23 @@ public class Block : MapNode
         return -1;
     }
 
+    [Obsolete("Se deja obsoleto hasta finalizar otras tareas.")]
     private int CheckIfFitsLeft(int size)
     {
-        for (int i = 0; i < _settings.Height; i++)
-        {
+        //for (int i = 0; i < _settings.Height; i++)
+        //{
 
-        }
+        //}
         throw new NotImplementedException();
     }
+
+    [Obsolete("Se deja obsoleto hasta finalizar otras tareas.")]
     private int CheckIfFitsRight(int size)
     {
-        for (int i = 0; i < _settings.Height; i++)
-        {
+        //for (int i = 0; i < _settings.Height; i++)
+        //{
 
-        }
+        //}
         throw new NotImplementedException();
     }
     #endregion
