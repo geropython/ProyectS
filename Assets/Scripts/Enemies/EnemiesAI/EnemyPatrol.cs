@@ -5,21 +5,22 @@ using UnityEngine;
 public class EnemyPatrol : MonoBehaviour
 {
      //Waypoint based- patrol for basic Enemy AI
-     //Enemy will move towards different waypoints, with a determined speed.
      [SerializeField] private Transform[] waypoints;
-     [SerializeField] private float moveSpeed = 5f;
-
+     private EnemyController _enemyController;
      private int _currentWaypointIndex = 0;
      private Transform _currentWaypoint;
+     private EnemyAnimationController _enemyAnimationController;
 
      private void Start()
      {
+          _enemyController = GetComponent<EnemyController>();
+          _enemyAnimationController = GetComponent<EnemyAnimationController>();
+
           if (waypoints.Length > 0)
           {
                _currentWaypoint = waypoints[_currentWaypointIndex];
           }
      }
-
      private void Update()
      {
           if (_currentWaypoint != null)
@@ -31,7 +32,10 @@ public class EnemyPatrol : MonoBehaviour
      private void MoveToWaypoint()
      {
           Vector2 direction = _currentWaypoint.position - transform.position;
-          transform.Translate(direction.normalized * (moveSpeed * Time.deltaTime));
+          transform.Translate(direction.normalized * (_enemyController.moveSpeed * Time.deltaTime));
+
+          // Actualiza la dirección en el script EnemyAnimationController
+          _enemyAnimationController.direction = direction;
 
           if (Vector2.Distance(transform.position, _currentWaypoint.position) < 0.1f)
           {
@@ -44,5 +48,4 @@ public class EnemyPatrol : MonoBehaviour
                _currentWaypoint = waypoints[_currentWaypointIndex];
           }
      }
-    
 }
