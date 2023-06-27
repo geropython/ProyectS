@@ -190,7 +190,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineOfSight: {fileID: 1690520164}
-  moveSpeed: 2.1
+  moveSpeed: 1.8
+  attackDistance: 3.2
 --- !u!114 &1690520169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,6 +205,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
 --- !u!114 &-1472223088047789425

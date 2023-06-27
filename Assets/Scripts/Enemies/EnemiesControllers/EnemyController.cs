@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -48,5 +49,11 @@ public class EnemyController : MonoBehaviour
 
       // Actualiza la dirección en el script EnemyAnimationController
       _enemyAnimationController.direction = direction;
+   }
+
+   private void OnDrawGizmos()
+   {
+      Gizmos.color = Color.red;
+      Gizmos.DrawWireSphere(transform.position, attackDistance);
    }
 }
