@@ -37333,6 +37333,10 @@ PrefabInstance:
       propertyPath: inputController
       value: 
       objectReference: {fileID: 995302578}
+    - target: {fileID: 3948495223841210803, guid: b2150c860b34a584599967f9ad26314b, type: 3}
+      propertyPath: attackTime
+      value: 0.05
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2150c860b34a584599967f9ad26314b, type: 3}
 --- !u!1 &2083149575
