@@ -12,6 +12,7 @@ public class PlayerView : MonoBehaviour
     private static readonly int XDirection = Animator.StringToHash("XDirection");
     private static readonly int YDirection = Animator.StringToHash("YDirection");
     private static readonly int Idle = Animator.StringToHash("Idle");
+    private static readonly int Attack = Animator.StringToHash("Attack");
     
     private Vector2 _viewDirection;
     private Camera _camera;
@@ -34,6 +35,7 @@ public class PlayerView : MonoBehaviour
         animator.SetFloat(XDirection, x);
         animator.SetFloat(YDirection, y);
         
+        animator.SetBool(Attack, playerModel.Attacking);
     }
 
 }
