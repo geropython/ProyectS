@@ -34838,6 +34838,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3559704790138370250, guid: b2150c860b34a584599967f9ad26314b, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 3559704792119556273, guid: b2150c860b34a584599967f9ad26314b, type: 3}
       propertyPath: speed
       value: 4.18
@@ -68020,6 +68024,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1971835984}
+    - target: {fileID: 1690520168, guid: 1d27bc5085972954aa7b1e65997c0cae, type: 3}
+      propertyPath: attackDistance
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1690520169, guid: 1d27bc5085972954aa7b1e65997c0cae, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 

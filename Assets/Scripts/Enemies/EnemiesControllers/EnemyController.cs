@@ -12,6 +12,8 @@ public class EnemyController : MonoBehaviour
    public float moveSpeed = 5f;
    //Animations
    private EnemyAnimationController _enemyAnimationController;
+   //Attacks:
+   [SerializeField] private float attackDistance = 1f;
    private void Start()
    {
       _enemyAnimationController = GetComponent<EnemyAnimationController>();
@@ -20,9 +22,23 @@ public class EnemyController : MonoBehaviour
    {
       if (lineOfSight.CanSeePlayer())
       {
-         
-         MoveTowardsPlayer(lineOfSight.player.position);
+         if (Vector2.Distance(transform.position, lineOfSight.player.position) <= attackDistance)
+         {
+            Attack();
+         }
+         else
+         {
+            MoveTowardsPlayer(lineOfSight.player.position);
+         }
       }
+   }
+   private void Attack()
+   {
+      print("Attacking Player");
+      Vector2 direction = lineOfSight.player.position - transform.position;
+
+      // Actualiza la dirección de ataque en el script EnemyAnimationController
+      _enemyAnimationController.SetAttackDirection(direction);
    }
    private void MoveTowardsPlayer(Vector2 targetPosition)
    {
@@ -33,5 +49,4 @@ public class EnemyController : MonoBehaviour
       // Actualiza la dirección en el script EnemyAnimationController
       _enemyAnimationController.direction = direction;
    }
-
 }
