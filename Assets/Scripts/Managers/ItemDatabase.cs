@@ -6,6 +6,7 @@ public enum ItemCategories
     Equipment = 0,
     Consumable = 1,
     Material = 2,
+    All = 3,
 }
 
 public class ItemDatabase : MonoBehaviour
