@@ -11,7 +11,7 @@ public class InventoryDisplay : MonoBehaviour
     [SerializeField] private TextMeshProUGUI filterName;
 
     private List<UI_ItemContainer> _itemsGenerated = new List<UI_ItemContainer>();
-    private int _currentFilter = 3;
+    private int _currentFilter;
     private int _lengthFilter;
 
     private void Awake()
