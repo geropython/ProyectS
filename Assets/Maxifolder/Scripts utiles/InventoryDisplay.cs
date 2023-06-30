@@ -87,13 +87,14 @@ public class InventoryDisplay : MonoBehaviour
         filterName.text = eName.ToString();
     }
 
-    private void Update()
+    public void Show()
     {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            FilterInventory();
-            var ena = popupMenu.activeInHierarchy;
-            popupMenu.SetActive(!ena);
-        }
+        FilterInventory();
+        popupMenu.SetActive(true);
+    }
+
+    public void Hide()
+    {
+        popupMenu.SetActive(false);
     }
 }
