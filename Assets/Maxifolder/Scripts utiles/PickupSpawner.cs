@@ -36,6 +36,7 @@ public class PickupSpawner : MonoBehaviour
         var pos = t.position;
         var rot = t.rotation;
         var i = 0;
+        // Quizas se puede hacer otra ruleta para el drop amount ej:Random[0,5] 1 mas probable y se va cambiando lo demas
         while (i < dropsAmount)
         {
             for (i = 0; i < dropsAmount; i++)

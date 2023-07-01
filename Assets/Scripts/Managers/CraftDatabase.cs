@@ -4,6 +4,7 @@ using UnityEngine;
 public class CraftDatabase : MonoBehaviour
 {
     [SerializeField] private List<CraftRecipeSO> recipesSODatabase = new();
+    public List<CraftRecipeSO> Recipes => recipesSODatabase;
 
     public CraftRecipeSO GetRecipeSO(ItemSO result)
     {
