@@ -71,6 +71,7 @@ public class CameraController : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawSphere(_midPoint, 1);
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(_midPoint, .1f);
     }
 }

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Maxifolder/SO/000ItemConsumable.asset.meta
 guid: 958a675726e82a442a825b3aae76e68d
+========
+guid: 13a44267d3ca8d24e92a2c581d87dc46
+>>>>>>>> main:Assets/Maxifolder/SO/001ItemEquipment.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

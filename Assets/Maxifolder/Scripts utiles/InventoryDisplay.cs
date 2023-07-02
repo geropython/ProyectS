@@ -1,23 +1,25 @@
 using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using TMPro;
 using UnityEngine;
 
 public class InventoryDisplay : MonoBehaviour
 {
-    private string _inventoryDisplayText;
-    [SerializeField] private bool defaultInventory;
-    [SerializeField] private bool materialInventory;
-    [SerializeField] private bool consumableInventory;
-    [SerializeField] private bool equipmentInventory;
-
     [SerializeField] private GameObject popupMenu;
     [SerializeField] private Transform contentContainer;
     [SerializeField] private UI_ItemContainer itemPrefab;
+    [SerializeField] private TextMeshProUGUI filterName;
 
     private List<UI_ItemContainer> _itemsGenerated = new List<UI_ItemContainer>();
+    private int _currentFilter = 3;
+    private int _lengthFilter;
 
-    private void GenerateItem(ItemSO itemSo)
+    private void Awake()
+    {
+        _lengthFilter = Enum.GetValues(typeof(ItemCategories)).Length - 1;
+    }
+
+    private void GenerateInventoryItem(ItemSO itemSo, int itemAmount)
     {
         var go = Instantiate(itemPrefab, contentContainer, true);
         if (!_itemsGenerated.Contains(go))
@@ -25,39 +27,41 @@ public class InventoryDisplay : MonoBehaviour
             _itemsGenerated.Add(go);
         }
 
-        go.SetupButton(itemSo.Icon, itemSo.Identifier);
+        // configura los datos que se ven en el boton
+        go.SetupButton(itemSo, itemAmount);
 
         //reset the item's scale -- this can get munged with UI prefabs
         go.transform.localScale = Vector2.one;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    [ContextMenu("NextFilter")]
+    public void NextFilter()
     {
-        if (defaultInventory)
+        _currentFilter++;
+        if (_currentFilter > _lengthFilter)
         {
-            DefaultInventory(other);
+            _currentFilter = 0;
         }
 
-        if (materialInventory)
-        {
-            MaterialInventory(other);
-        }
-
-        if (consumableInventory)
-        {
-            ConsumableInventory(other);
-        }
-
-        if (equipmentInventory)
-        {
-            EquipmentInventory(other);
-        }
+        UpdateFilterName();
+        FilterInventory();
     }
 
-    private void DefaultInventory(Collider2D other)
+    [ContextMenu("PrevFilter")]
+    public void PreviousFilter()
     {
-        if (!other.GetComponent<PlayerModel>()) return;
-        _inventoryDisplayText = "";
+        _currentFilter--;
+        if (_currentFilter < 0)
+        {
+            _currentFilter = _lengthFilter;
+        }
+
+        UpdateFilterName();
+        FilterInventory();
+    }
+
+    private void FilterInventory()
+    {
         foreach (var item in _itemsGenerated)
         {
             Destroy(item.gameObject);
@@ -66,83 +70,28 @@ public class InventoryDisplay : MonoBehaviour
         _itemsGenerated.Clear();
         foreach (var kvP in GameManager.Instance.PlayerInventory.PlayerInventoryDicSO)
         {
-            _inventoryDisplayText += $"{kvP.Key.Identifier} x{kvP.Value} \n";
-            GenerateItem(kvP.Key);
-        }
-
-        Debug.LogWarning(string.Concat("Inventory \n ----- \n", _inventoryDisplayText));
-    }
-
-    private void MaterialInventory(Collider2D other)
-    {
-        if (!other.GetComponent<PlayerModel>()) return;
-        _inventoryDisplayText = "";
-        foreach (var item in _itemsGenerated)
-        {
-            Destroy(item.gameObject);
-        }
-
-        _itemsGenerated.Clear();
-        foreach (var kvP in GameManager.Instance.PlayerInventory.PlayerInventoryDicSO)
-        {
-            if (kvP.Key.ItemCategories == ItemCategories.Material)
+            if ((ItemCategories)_currentFilter == ItemCategories.All)
             {
-                _inventoryDisplayText += $"{kvP.Key.Identifier} x{kvP.Value} \n";
-                GenerateItem(kvP.Key);
+                GenerateInventoryItem(kvP.Key, kvP.Value);
+            }
+            else if (kvP.Key.ItemCategories == (ItemCategories)_currentFilter)
+            {
+                GenerateInventoryItem(kvP.Key, kvP.Value);
             }
         }
-
-        Debug.LogWarning(string.Concat("Inventory \n ----- \n", _inventoryDisplayText));
     }
 
-    private void ConsumableInventory(Collider2D other)
+    private void UpdateFilterName()
     {
-        if (!other.GetComponent<PlayerModel>()) return;
-        _inventoryDisplayText = "";
-        foreach (var item in _itemsGenerated)
-        {
-            Destroy(item.gameObject);
-        }
-
-        _itemsGenerated.Clear();
-        foreach (var kvP in GameManager.Instance.PlayerInventory.PlayerInventoryDicSO)
-        {
-            if (kvP.Key.ItemCategories == ItemCategories.Consumable)
-            {
-                _inventoryDisplayText += $"{kvP.Key.Identifier} x{kvP.Value} \n";
-                GenerateItem(kvP.Key);
-            }
-        }
-
-        Debug.LogWarning(string.Concat("Inventory \n ----- \n", _inventoryDisplayText));
-    }
-
-    private void EquipmentInventory(Collider2D other)
-    {
-        if (!other.GetComponent<PlayerModel>()) return;
-        _inventoryDisplayText = "";
-        foreach (var item in _itemsGenerated)
-        {
-            Destroy(item.gameObject);
-        }
-
-        _itemsGenerated.Clear();
-        foreach (var kvP in GameManager.Instance.PlayerInventory.PlayerInventoryDicSO)
-        {
-            if (kvP.Key.ItemCategories == ItemCategories.Equipment)
-            {
-                _inventoryDisplayText += $"{kvP.Key.Identifier} x{kvP.Value} \n";
-                GenerateItem(kvP.Key);
-            }
-        }
-
-        Debug.LogWarning(string.Concat("Inventory \n ----- \n", _inventoryDisplayText));
+        var eName = (ItemCategories)_currentFilter;
+        filterName.text = eName.ToString();
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
+            FilterInventory();
             var ena = popupMenu.activeInHierarchy;
             popupMenu.SetActive(!ena);
         }

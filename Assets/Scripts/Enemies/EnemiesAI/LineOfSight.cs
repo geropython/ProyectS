@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,12 @@ public class LineOfSight : MonoBehaviour
     [SerializeField] private LayerMask obstacleMask;
 
     private bool playerDetected = false;
+
+    private void Start()
+    {
+        if (player == null)
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
     private void Update()
     {
