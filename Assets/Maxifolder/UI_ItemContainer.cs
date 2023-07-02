@@ -5,16 +5,15 @@ using UnityEngine.UI;
 
 public class UI_ItemContainer : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    [Header("Button")][Space(5)]
-    [SerializeField] private Image buttonIcon;
+    [Header("Button")] [Space(5)] [SerializeField]
+    private Image buttonIcon;
+
     [SerializeField] private TextMeshProUGUI buttonName;
     [SerializeField] private TextMeshProUGUI buttonAmount;
 
-    [Header("Info")][Space(5)] [SerializeField]
+    [Header("Info")] [Space(5)] [SerializeField]
     private TextMeshProUGUI _type;
 
-    
-    
     private ItemSO _itemData;
 
     public void SetupButton(ItemSO item, int itemAmount)
@@ -27,7 +26,6 @@ public class UI_ItemContainer : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     private void SetupInfo()
     {
-        
     }
 
     public void OnPointerEnter(PointerEventData eventData)

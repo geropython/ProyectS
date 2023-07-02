@@ -30,7 +30,7 @@ public class Pickup : MonoBehaviour
     {
         var playerModel = other.GetComponent<PlayerModel>();
         // Confirmar que fue un jugador y que ese jugador no tenga el inventario lleno
-        if (!playerModel || playerModel.InventoryFull) return;
+        if (!playerModel || playerModel.InventoryFull || !playerModel.CompareTag("PlayerDetection")) return;
         playerModel.PickupItemSO(item, quantity);
         // quizas cambiar esto por pool management
         Destruction();
