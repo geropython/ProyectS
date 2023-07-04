@@ -6,12 +6,10 @@ public class HealthController : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 100;
     [SerializeField] private int currentHealth;
-    
     private void Start()
     {
         currentHealth = maxHealth;
     }
-    
     public void TakeDamage(int damageAmount)
     {
         currentHealth -= damageAmount;
@@ -22,7 +20,6 @@ public class HealthController : MonoBehaviour
             Die();
         }
     }
-    
     public void Heal(int healAmount)
     {
         currentHealth += healAmount;
@@ -33,12 +30,10 @@ public class HealthController : MonoBehaviour
             currentHealth = maxHealth;
         }
     }
-    
     private void Die()
     {
         print("You Died");
         Destroy(gameObject);
     }
-    
     
 }

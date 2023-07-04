@@ -1,22 +1,14 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LineOfSight : MonoBehaviour
 {
+    //LOS Variables:
     [SerializeField] public Transform player;
     [SerializeField] private float maxDistance = 10f;
     [SerializeField] private LayerMask obstacleMask;
-
     private bool playerDetected = false;
-
-    private void Start()
-    {
-        if (player == null)
-            player = GameObject.FindGameObjectWithTag("Player").transform;
-    }
-
     private void Update()
     {
         bool canSeePlayer = CanSeePlayer();
@@ -32,7 +24,6 @@ public class LineOfSight : MonoBehaviour
             playerDetected = false;
         }
     }
-
     public bool CanSeePlayer()
     {
         if (Vector2.Distance(transform.position, player.position) > maxDistance)
@@ -52,12 +43,9 @@ public class LineOfSight : MonoBehaviour
 
         return false;
     }
-
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, maxDistance);
     }
-
-
 }
