@@ -68217,11 +68217,30 @@ PrefabInstance:
       value: 4.84
       objectReference: {fileID: 0}
     - target: {fileID: 3948495223841210803, guid: b2150c860b34a584599967f9ad26314b, type: 3}
+      propertyPath: attackTime
+      value: 0.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 3948495223841210803, guid: b2150c860b34a584599967f9ad26314b, type: 3}
+      propertyPath: playerAttack
+      value: 
+      objectReference: {fileID: 2055458957}
+    - target: {fileID: 3948495223841210803, guid: b2150c860b34a584599967f9ad26314b, type: 3}
       propertyPath: InventoryFull
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2150c860b34a584599967f9ad26314b, type: 3}
+--- !u!114 &2055458957 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8231502498198602375, guid: b2150c860b34a584599967f9ad26314b, type: 3}
+  m_PrefabInstance: {fileID: 2055458956}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de40529529deba44b9f695a08b1e820b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2083149575
 GameObject:
   m_ObjectHideFlags: 0
@@ -75577,6 +75596,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1971835984}
+    - target: {fileID: 1690520164, guid: 1d27bc5085972954aa7b1e65997c0cae, type: 3}
+      propertyPath: maxDistance
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1690520168, guid: 1d27bc5085972954aa7b1e65997c0cae, type: 3}
+      propertyPath: moveSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1690520168, guid: 1d27bc5085972954aa7b1e65997c0cae, type: 3}
+      propertyPath: attackDistance
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1690520169, guid: 1d27bc5085972954aa7b1e65997c0cae, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
