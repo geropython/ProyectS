@@ -1,9 +1,10 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class UI_CraftContainer : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class UI_CraftContainer : MonoBehaviour, IPointerEnterHandler
 {
     [Header("Button")] [Space(5)] [SerializeField]
     private Image buttonIcon;
@@ -12,6 +13,8 @@ public class UI_CraftContainer : MonoBehaviour, IPointerEnterHandler, IPointerEx
 
     private CraftRecipeSO _craftData;
 
+    public event Action<CraftRecipeSO> OnInteraction;
+
     public void SetupButton(CraftRecipeSO recipe)
     {
         buttonIcon.sprite = recipe.ItemResult.Icon;
@@ -19,17 +22,8 @@ public class UI_CraftContainer : MonoBehaviour, IPointerEnterHandler, IPointerEx
         _craftData = recipe;
     }
 
-    private void SetupInfo()
-    {
-    }
-
     public void OnPointerEnter(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        throw new System.NotImplementedException();
+        OnInteraction?.Invoke(_craftData);
     }
 }
