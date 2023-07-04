@@ -10,6 +10,12 @@ public class InventoryDisplay : MonoBehaviour
     [SerializeField] private UI_ItemContainer itemPrefab;
     [SerializeField] private TextMeshProUGUI filterName;
 
+    [Header("Info UI")] [Space(5)] [SerializeField]
+    private TextMeshProUGUI itemIdentifier;
+
+    [SerializeField] private TextMeshProUGUI itemCategory;
+    [SerializeField] private TextMeshProUGUI itemDescription;
+
     private List<UI_ItemContainer> _itemsGenerated = new List<UI_ItemContainer>();
     private int _currentFilter;
     private int _lengthFilter;
@@ -24,6 +30,7 @@ public class InventoryDisplay : MonoBehaviour
         var go = Instantiate(itemPrefab, contentContainer, true);
         if (!_itemsGenerated.Contains(go))
         {
+            go.OnInteraction += ShowDetails;
             _itemsGenerated.Add(go);
         }
 
@@ -64,6 +71,7 @@ public class InventoryDisplay : MonoBehaviour
     {
         foreach (var item in _itemsGenerated)
         {
+            item.OnInteraction -= ShowDetails;
             Destroy(item.gameObject);
         }
 
@@ -96,5 +104,12 @@ public class InventoryDisplay : MonoBehaviour
     public void Hide()
     {
         popupMenu.SetActive(false);
+    }
+
+    private void ShowDetails(ItemSO item)
+    {
+        itemIdentifier.text = item.Identifier;
+        itemCategory.text = item.ItemCategories.ToString();
+        itemDescription.text = item.Description;
     }
 }

@@ -19,9 +19,7 @@ public class CraftDisplay : MonoBehaviour
     [SerializeField] private TextMeshProUGUI craftRequiredMaterials;
     [SerializeField] private Button craftButton;
 
-
     private List<UI_CraftContainer> _itemsGenerated = new List<UI_CraftContainer>();
-
 
     public void Show()
     {
