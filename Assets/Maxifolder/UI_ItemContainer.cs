@@ -1,21 +1,23 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class UI_ItemContainer : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class UI_ItemContainer : MonoBehaviour, IPointerEnterHandler
 {
-    [Header("Button")][Space(5)]
-    [SerializeField] private Image buttonIcon;
+    [Header("Button")] [Space(5)] [SerializeField]
+    private Image buttonIcon;
+
     [SerializeField] private TextMeshProUGUI buttonName;
     [SerializeField] private TextMeshProUGUI buttonAmount;
 
-    [Header("Info")][Space(5)] [SerializeField]
+    [Header("Info")] [Space(5)] [SerializeField]
     private TextMeshProUGUI _type;
 
-    
-    
     private ItemSO _itemData;
+
+    public event Action<ItemSO> OnInteraction;
 
     public void SetupButton(ItemSO item, int itemAmount)
     {
@@ -24,19 +26,9 @@ public class UI_ItemContainer : MonoBehaviour, IPointerEnterHandler, IPointerExi
         buttonAmount.text = itemAmount.ToString();
         _itemData = item;
     }
-
-    private void SetupInfo()
-    {
-        
-    }
-
+    
     public void OnPointerEnter(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        throw new System.NotImplementedException();
+        OnInteraction?.Invoke(_itemData);
     }
 }

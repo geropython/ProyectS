@@ -3,10 +3,11 @@ using UnityEngine;
 
 public enum ItemCategories
 {
-    Equipment = 0,
-    Consumable = 1,
-    Material = 2,
-    All = 3,
+    All,
+    Equipment,
+    Consumable,
+    Material,
+    Key,
 }
 
 public class ItemDatabase : MonoBehaviour
