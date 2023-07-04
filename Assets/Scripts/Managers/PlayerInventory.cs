@@ -17,14 +17,24 @@ public class PlayerInventory : MonoBehaviour
     // Agrega el item al inventario, si ya estaba le suma la cantidad extra, sino crea una nueva entrada y le asigna ese valor
     public void AddItemSO(ItemSO item, int addQuantity)
     {
-        if (_playerInventorySO.TryGetValue(item, out var oldQuantity))
-        {
-            _playerInventorySO[item] = oldQuantity + addQuantity;
-        }
-        else
+        if (!_playerInventorySO.TryGetValue(item, out var oldQuantity))
         {
             _playerInventorySO.Add(item, addQuantity);
         }
+        else
+        {
+            _playerInventorySO[item] = oldQuantity + addQuantity;
+        }
+        // if (_playerInventorySO.ContainsKey(item))
+        // {
+        //     var prevAmount = _playerInventorySO[item];
+        //     var newAmount = prevAmount + addQuantity;
+        //     _playerInventorySO[item] = newAmount;
+        // }
+        // else
+        // {
+        //     _playerInventorySO.Add(item, addQuantity);
+        // }
     }
 
     // Lo mismo que agregar pero al reves
@@ -57,6 +67,5 @@ public class PlayerInventory : MonoBehaviour
 
     public void DropItemSO()
     {
-        
     }
 }
