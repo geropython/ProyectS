@@ -20,14 +20,16 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float attackDistance = 1f;
     public float attackCooldown = 2f;
     private float timeSinceLastAttack = 0f;
-
+    
+    //Stop  moving when attack is active:
+    public bool isAttacking = false;
+    
     private void Start()
     {
         _enemyAnimationController = GetComponent<EnemyAnimationController>();
     }
-
     //Attack Delay- Cooldown on Update
-    private void Update()
+    private void Update()   //MODIFICAR PERFORMANCE?¿
     {
         if (lineOfSight.CanSeePlayer())
         {
@@ -39,31 +41,43 @@ public class EnemyController : MonoBehaviour
             {
                 _enemyAnimationController.StopAttackAnimation();
                 MoveTowardsPlayer(lineOfSight.player.position);
+
+                
+                isAttacking = false;
             }
         }
         else
         {
             _enemyAnimationController.StopAttackAnimation();
+
+            
+            isAttacking = false;
         }
     }
-
     private void Attack()
     {
         print("Attacking Player");
         Vector2 direction = lineOfSight.player.position - transform.position;
 
-        // Actualiza la dirección de ataque en el script EnemyAnimationController
+        // Attack direction from EnemyAnimationController
         _enemyAnimationController.SetAttackDirection(direction);
-    }
 
+      
+        isAttacking = true;
+    }
     private void MoveTowardsPlayer(Vector2 targetPosition)
     {
         print("Chasing Player");
-        Vector2 direction = targetPosition - (Vector2)transform.position;
-        transform.Translate(direction.normalized * (moveSpeed * Time.deltaTime));
 
-        // Actualiza la dirección en el script EnemyAnimationController
-        _enemyAnimationController.direction = direction;
+        //Is attacking bool condition checked:
+        if (!isAttacking)
+        {
+            Vector2 direction = targetPosition - (Vector2)transform.position;
+            transform.Translate(direction.normalized * (moveSpeed * Time.deltaTime));
+
+            // Updates the attack Direction from AnimationController
+            _enemyAnimationController.direction = direction;
+        }
     }
 
     //Attack Range Gizmos

@@ -28,24 +28,28 @@ public class EnemyPatrol : MonoBehaviour
                MoveToWaypoint();  
           }
      }
-     //Movimiento del Enemigo  al siguiente waypoint.           
+            
      private void MoveToWaypoint()
      {
-          Vector2 direction = _currentWaypoint.position - transform.position;
-          transform.Translate(direction.normalized * (_enemyController.moveSpeed * Time.deltaTime));
-
-          // Actualiza la dirección en el script EnemyAnimationController
-          _enemyAnimationController.direction = direction;
-
-          if (Vector2.Distance(transform.position, _currentWaypoint.position) < 0.1f)
+          //Check attack bool before moving the enemy:
+          if (!_enemyController.isAttacking)
           {
-               _currentWaypointIndex++;
-               if (_currentWaypointIndex >= waypoints.Length)
-               {
-                    _currentWaypointIndex = 0;
-               }
+               Vector2 direction = _currentWaypoint.position - transform.position;
+               transform.Translate(direction.normalized * (_enemyController.moveSpeed * Time.deltaTime));
 
-               _currentWaypoint = waypoints[_currentWaypointIndex];
+               // Updates attack direction from animationController
+               _enemyAnimationController.direction = direction;
+
+               if (Vector2.Distance(transform.position, _currentWaypoint.position) < 0.1f)
+               {
+                    _currentWaypointIndex++;
+                    if (_currentWaypointIndex >= waypoints.Length)
+                    {
+                         _currentWaypointIndex = 0;
+                    }
+
+                    _currentWaypoint = waypoints[_currentWaypointIndex];
+               }
           }
      }
 }
