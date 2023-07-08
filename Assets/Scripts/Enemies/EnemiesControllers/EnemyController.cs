@@ -28,32 +28,29 @@ public class EnemyController : MonoBehaviour
     {
         _enemyAnimationController = GetComponent<EnemyAnimationController>();
     }
-    //Attack Delay- Cooldown on Update
-    private void Update()   //MODIFICAR PERFORMANCE?¿
+
+    private void Update()
     {
+        _enemyAnimationController.StopAttackAnimation();
+
         if (lineOfSight.CanSeePlayer())
         {
-            if (Vector2.Distance(transform.position, lineOfSight.player.position) <= attackDistance)
+            if ((transform.position - lineOfSight.player.position).sqrMagnitude <= attackDistance * attackDistance)
             {
                 Attack();
             }
             else
             {
-                _enemyAnimationController.StopAttackAnimation();
                 MoveTowardsPlayer(lineOfSight.player.position);
-
-                
                 isAttacking = false;
             }
         }
         else
         {
-            _enemyAnimationController.StopAttackAnimation();
-
-            
             isAttacking = false;
         }
     }
+
     private void Attack()
     {
         print("Attacking Player");
@@ -65,6 +62,7 @@ public class EnemyController : MonoBehaviour
       
         isAttacking = true;
     }
+
     private void MoveTowardsPlayer(Vector2 targetPosition)
     {
         print("Chasing Player");

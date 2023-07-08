@@ -77470,13 +77470,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1608622886}
     m_Modifications:
+    - target: {fileID: 1690520163, guid: 1d27bc5085972954aa7b1e65997c0cae, type: 3}
+      propertyPath: m_BodyType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1690520164, guid: 1d27bc5085972954aa7b1e65997c0cae, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1971835984}
     - target: {fileID: 1690520164, guid: 1d27bc5085972954aa7b1e65997c0cae, type: 3}
       propertyPath: maxDistance
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1690520168, guid: 1d27bc5085972954aa7b1e65997c0cae, type: 3}
       propertyPath: moveSpeed
@@ -77488,7 +77492,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1690520168, guid: 1d27bc5085972954aa7b1e65997c0cae, type: 3}
       propertyPath: attackDistance
-      value: 2.5
+      value: 2.6
       objectReference: {fileID: 0}
     - target: {fileID: 1690520169, guid: 1d27bc5085972954aa7b1e65997c0cae, type: 3}
       propertyPath: waypoints.Array.data[0]
