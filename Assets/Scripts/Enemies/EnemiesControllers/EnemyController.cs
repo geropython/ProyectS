@@ -17,7 +17,7 @@ public class EnemyController : MonoBehaviour
     private EnemyAnimationController _enemyAnimationController;
 
     //Attacks:
-    [SerializeField] private float attackDistance = 1f;
+    [SerializeField] public float attackDistance = 1f;
     public float attackCooldown = 2f;
     private float timeSinceLastAttack = 0f;
     

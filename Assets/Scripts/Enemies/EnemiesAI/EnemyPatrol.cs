@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyPatrol : MonoBehaviour
 {
      //Waypoint based- patrol for basic Enemy AI
-     [SerializeField] private Transform[] waypoints;
+     [SerializeField] public Transform[] waypoints;
      private EnemyController _enemyController;
      private int _currentWaypointIndex = 0;
      private Transform _currentWaypoint;
