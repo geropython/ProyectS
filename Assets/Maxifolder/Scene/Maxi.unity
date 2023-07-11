@@ -71569,6 +71569,14 @@ PrefabInstance:
       propertyPath: inputController
       value: 
       objectReference: {fileID: 252577707}
+    - target: {fileID: 8824798474335039901, guid: 72b7468ff3cae4f40aa660afbb184332, type: 3}
+      propertyPath: recipesSODatabase.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8824798474335039901, guid: 72b7468ff3cae4f40aa660afbb184332, type: 3}
+      propertyPath: recipesSODatabase.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0dadabbeae9d55848bce1a5eb67e0f21, type: 2}
     - target: {fileID: 8824798474335039903, guid: 72b7468ff3cae4f40aa660afbb184332, type: 3}
       propertyPath: m_Name
       value: GM
@@ -71617,5 +71625,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8824798474335040098, guid: 72b7468ff3cae4f40aa660afbb184332, type: 3}
+      propertyPath: itemsSODatabase.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8824798474335040098, guid: 72b7468ff3cae4f40aa660afbb184332, type: 3}
+      propertyPath: itemsSODatabase.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 98fca330cac6acd4aaf7eb7d26ed4b86, type: 2}
+    - target: {fileID: 8824798474335040098, guid: 72b7468ff3cae4f40aa660afbb184332, type: 3}
+      propertyPath: itemsSODatabase.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 51b6c0087f95b314ea4989243f0a0464, type: 2}
+    - target: {fileID: 8824798474335040098, guid: 72b7468ff3cae4f40aa660afbb184332, type: 3}
+      propertyPath: itemsSODatabase.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: f64776d679f4d5240a61b3112bb9783d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72b7468ff3cae4f40aa660afbb184332, type: 3}

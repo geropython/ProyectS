@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ac5437c0d15ce04192da79dc1fd85a8, type: 3}
-  m_Name: C000_StoneAxe
+  m_Name: R000_StoneAxe
   m_EditorClassIdentifier: 
   itemResult: {fileID: 11400000, guid: 788467724946103448f54318691ddd94, type: 2}
   itemResultQuantity: 1
