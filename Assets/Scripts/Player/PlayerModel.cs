@@ -1,10 +1,13 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerModel : MonoBehaviour
 {
     [Range(0, 10)] [SerializeField] private float speed;
     [Range(0, 10)] [SerializeField] private float attackTime;
+    [SerializeField] private PlayerAttack playerAttack;
+    private Vector2 forward;
 
     private bool _attacking;
     
@@ -15,6 +18,7 @@ public class PlayerModel : MonoBehaviour
     
     public bool Attacking => _attacking;
     public float AttackTime => attackTime;
+    public Vector2 Forward => forward;
     
     private void Update()
     {
@@ -28,8 +32,14 @@ public class PlayerModel : MonoBehaviour
         Direction = direction * (speed * Time.deltaTime);
     }
 
+    public void LookAt(Vector2 direction)
+    {
+        forward = (Vector2)transform.position + direction;
+    }
+
     public void Attack()
     {
+        playerAttack.Attack();
         _attacking = true;
         Invoke(nameof(StopAttacking), attackTime);
     }
@@ -47,5 +57,10 @@ public class PlayerModel : MonoBehaviour
         {
             GameManager.Instance.PlayerInventory.AddItemSO(item, quantity);
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere((Vector3)forward, .1f);
     }
 }

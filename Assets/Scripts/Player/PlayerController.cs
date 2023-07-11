@@ -16,6 +16,7 @@ namespace Character
         private void Update()
         {
             playerModel.Move(inputController.Movement);
+            playerModel.LookAt((inputController.MousePosition - (Vector2)transform.position).normalized);
         }
 
         private void Attack()

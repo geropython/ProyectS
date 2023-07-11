@@ -5,17 +5,17 @@
     "AssetGUID": "0625d97048824304aa549823b599453c",
     "UniqueItemID": "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-1937199456-0"
   },
-  "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-1732510460-0": {
-    "GameObjectId": "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-1732510460-0",
-    "CommentText": "Component for Camera - related items.",
-    "AssetGUID": "0625d97048824304aa549823b599453c",
-    "UniqueItemID": "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-1732510460-0"
-  },
   "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-1608622885-0": {
     "GameObjectId": "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-1608622885-0",
     "CommentText": "Hacer la lógica para el enemyController, EnemyLineofSight, EnemyAttack, etc.\n",
     "AssetGUID": "0625d97048824304aa549823b599453c",
     "UniqueItemID": "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-1608622885-0"
+  },
+  "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-1732510460-0": {
+    "GameObjectId": "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-1732510460-0",
+    "CommentText": "Component for Camera - related items.",
+    "AssetGUID": "0625d97048824304aa549823b599453c",
+    "UniqueItemID": "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-1732510460-0"
   },
   "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-1508944914-0": {
     "GameObjectId": "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-1508944914-0",
@@ -28,6 +28,12 @@
     "CommentText": "Component for cameras-related only",
     "AssetGUID": "0625d97048824304aa549823b599453c",
     "UniqueItemID": "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-577933304-0"
+  },
+  "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-938340493-0": {
+    "GameObjectId": "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-938340493-0",
+    "CommentText": "Waypoionts for the enemypatrol script.",
+    "AssetGUID": "0625d97048824304aa549823b599453c",
+    "UniqueItemID": "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-938340493-0"
   },
   "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-1529409725-0": {
     "GameObjectId": "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-1529409725-0",
