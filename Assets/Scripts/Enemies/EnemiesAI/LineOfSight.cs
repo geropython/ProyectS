@@ -36,7 +36,7 @@ public class LineOfSight : MonoBehaviour
         Vector2 direction = player.position - position;
         RaycastHit2D hit = Physics2D.Raycast(position, direction, maxDistance, obstacleMask);
 
-        if (hit.collider != null && hit.collider.CompareTag("Player"))
+        if (hit.collider != null && hit.collider.CompareTag("PlayerDetection"))
         {
             return true;
         }
