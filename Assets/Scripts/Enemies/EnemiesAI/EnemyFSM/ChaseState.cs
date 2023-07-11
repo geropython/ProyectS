@@ -30,7 +30,8 @@ public class ChaseState : EnemyState
                 _fsm.ChangeState(new AttackState(_fsm));
                 return;
             }
-            else
+
+            if (!_fsm.GetComponent<EnemyController>().isAttacking)
             {
                 MoveTowardsPlayer();
             }
@@ -39,7 +40,6 @@ public class ChaseState : EnemyState
         {
             // Transition to Patrol state
             _fsm.ChangeState(new PatrolState(_fsm));
-            return;
         }
     }
     private void MoveTowardsPlayer()

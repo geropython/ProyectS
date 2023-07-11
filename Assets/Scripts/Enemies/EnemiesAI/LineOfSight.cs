@@ -8,20 +8,20 @@ public class LineOfSight : MonoBehaviour
     [SerializeField] public Transform player;
     [SerializeField] private float maxDistance = 10f;
     [SerializeField] private LayerMask obstacleMask;
-    private bool playerDetected = false;
+    private bool _playerDetected;
     private void Update()
     {
         bool canSeePlayer = CanSeePlayer();
 
-        if (canSeePlayer && !playerDetected)
+        if (canSeePlayer && !_playerDetected)
         {
             print("Player in sight");
-            playerDetected = true;
+            _playerDetected = true;
         }
-        else if (!canSeePlayer && playerDetected)
+        else if (!canSeePlayer && _playerDetected)
         {
             print("PLayer out of Sight.");
-            playerDetected = false;
+            _playerDetected = false;
         }
     }
     public bool CanSeePlayer()

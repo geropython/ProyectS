@@ -75968,13 +75968,9 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1971835984}
-    - target: {fileID: 1690520164, guid: 1d27bc5085972954aa7b1e65997c0cae, type: 3}
-      propertyPath: maxDistance
-      value: 3.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1690520164, guid: 1d27bc5085972954aa7b1e65997c0cae, type: 3}
-      propertyPath: obstacleMask.m_Bits
-      value: 64
+    - target: {fileID: 1690520168, guid: 1d27bc5085972954aa7b1e65997c0cae, type: 3}
+      propertyPath: isAttacking
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1690520169, guid: 1d27bc5085972954aa7b1e65997c0cae, type: 3}
       propertyPath: waypoints.Array.data[0]
@@ -75995,10 +75991,6 @@ PrefabInstance:
     - target: {fileID: 5590099326329587924, guid: 1d27bc5085972954aa7b1e65997c0cae, type: 3}
       propertyPath: m_Name
       value: EnemyMutant
-      objectReference: {fileID: 0}
-    - target: {fileID: 5590099326329587924, guid: 1d27bc5085972954aa7b1e65997c0cae, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 5590099326329587946, guid: 1d27bc5085972954aa7b1e65997c0cae, type: 3}
       propertyPath: m_RootOrder

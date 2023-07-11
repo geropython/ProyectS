@@ -37,7 +37,7 @@ public class PatrolState : EnemyState
             return;
         }
 
-        if (_currentWaypoint != null)
+        if (_currentWaypoint != null && !_fsm.GetComponent<EnemyController>().isAttacking)
         {
             MoveTowardsWaypoint();
         }

@@ -8,7 +8,7 @@ public class EnemyFSM : MonoBehaviour
 
     private void Start()
     {
-        // Set the initial state
+        //initial state
         ChangeState(new IdleState(this));
     }
     private void Update()

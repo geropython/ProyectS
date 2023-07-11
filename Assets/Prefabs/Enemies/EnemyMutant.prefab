@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1690520168}
   - component: {fileID: 1690520169}
   - component: {fileID: 8066492579052756344}
+  - component: {fileID: 1690520170}
   m_Layer: 11
   m_Name: EnemyMutant
   m_TagString: Enemy
@@ -188,10 +189,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 328f85f013224b84dae79d7e7866fea9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineOfSight: {fileID: 1690520164}
   moveSpeed: 2
-  attackDistance: 2.1
-  attackCooldown: 0.3
+  attackDistance: 2.5
+  attackCooldown: 0.2
   isAttacking: 0
 --- !u!114 &1690520169
 MonoBehaviour:
@@ -223,3 +223,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0}
+--- !u!114 &1690520170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5590099326329587924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2791e7a18ccdf846b411527487d75b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
