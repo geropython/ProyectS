@@ -1,21 +1,27 @@
 {
+  "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-1691148246-0": {
+    "GameObjectId": "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-1691148246-0",
+    "CommentText": "All items / inventory stuff related section.",
+    "AssetGUID": "0625d97048824304aa549823b599453c",
+    "UniqueItemID": "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-1691148246-0"
+  },
   "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-1937199456-0": {
     "GameObjectId": "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-1937199456-0",
     "CommentText": "Component that controls the player prefab and it´s main features.",
     "AssetGUID": "0625d97048824304aa549823b599453c",
     "UniqueItemID": "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-1937199456-0"
   },
-  "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-1608622885-0": {
-    "GameObjectId": "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-1608622885-0",
-    "CommentText": "Hacer la lógica para el enemyController, EnemyLineofSight, EnemyAttack, etc.\n",
-    "AssetGUID": "0625d97048824304aa549823b599453c",
-    "UniqueItemID": "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-1608622885-0"
-  },
   "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-1732510460-0": {
     "GameObjectId": "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-1732510460-0",
     "CommentText": "Component for Camera - related items.",
     "AssetGUID": "0625d97048824304aa549823b599453c",
     "UniqueItemID": "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-1732510460-0"
+  },
+  "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-1608622885-0": {
+    "GameObjectId": "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-1608622885-0",
+    "CommentText": "Hacer la lógica para el enemyController, EnemyLineofSight, EnemyAttack, etc.\n",
+    "AssetGUID": "0625d97048824304aa549823b599453c",
+    "UniqueItemID": "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-1608622885-0"
   },
   "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-1508944914-0": {
     "GameObjectId": "GlobalObjectId_V1-2-0625d97048824304aa549823b599453c-1508944914-0",

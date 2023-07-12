@@ -9,8 +9,6 @@ public class PlayerView : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private InputController _inputController;
     
-    private static readonly int XDirection = Animator.StringToHash("XDirection");
-    private static readonly int YDirection = Animator.StringToHash("YDirection");
     private static readonly int Idle = Animator.StringToHash("Idle");
     private static readonly int Attack = Animator.StringToHash("Attack");
     
@@ -24,16 +22,15 @@ public class PlayerView : MonoBehaviour
 
     private void Update()
     {
-        var idle = playerModel.Direction.x == 0 && playerModel.Direction.y == 0;
-        animator.SetBool(Idle, idle);
+        animator.SetBool(Idle, playerModel.Idle);
 
         var lookAt = (_inputController.MousePosition - (Vector2)transform.position).normalized;
         
-        var x = idle ? lookAt.x : playerModel.Direction.x;
-        var y = idle ? lookAt.y : playerModel.Direction.y;
+        var x = playerModel.Idle ? playerModel.LookAtDirection.x : playerModel.Direction.x;
+        var y = playerModel.Idle ? playerModel.LookAtDirection.y : playerModel.Direction.y;
 
-        animator.SetFloat(XDirection, x);
-        animator.SetFloat(YDirection, y);
+        animator.SetFloat("XDirection", x);
+        animator.SetFloat("YDirection", y);
         
         animator.SetBool(Attack, playerModel.Attacking);
     }

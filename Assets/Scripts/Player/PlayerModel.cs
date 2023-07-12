@@ -7,9 +7,11 @@ public class PlayerModel : MonoBehaviour
     [Range(0, 10)] [SerializeField] private float speed;
     [Range(0, 10)] [SerializeField] private float attackTime;
     [SerializeField] private PlayerAttack playerAttack;
-    private Vector2 forward;
 
+    private Vector2 _lookAtDirection;
+    private Vector2 _forward;
     private bool _attacking;
+    private bool _idle;
     
     public bool InventoryFull;
 
@@ -17,24 +19,23 @@ public class PlayerModel : MonoBehaviour
     public Vector2 Direction { get; private set; }
     
     public bool Attacking => _attacking;
+    public bool Idle => _idle;
     public float AttackTime => attackTime;
-    public Vector2 Forward => forward;
-    
-    private void Update()
-    {
-        transform.Translate(Direction);
-        Direction = Vector2.zero;
-    }
+    public Vector2 Forward => _forward;
+    public Vector2 LookAtDirection => _lookAtDirection;
 
     public void Move(Vector2 direction)
     {
         if (_attacking) return;
         Direction = direction * (speed * Time.deltaTime);
+        transform.Translate(Direction);
+        _idle = Direction is { x: 0, y: 0 };
     }
 
     public void LookAt(Vector2 direction)
     {
-        forward = (Vector2)transform.position + direction;
+        _lookAtDirection = direction;
+        _forward = (Vector2)transform.position + direction;
     }
 
     public void Attack()
@@ -61,6 +62,6 @@ public class PlayerModel : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere((Vector3)forward, .1f);
+        Gizmos.DrawWireSphere((Vector3)_forward, .1f);
     }
 }
